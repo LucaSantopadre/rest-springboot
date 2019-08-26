@@ -49,27 +49,18 @@ public class UserController {
         return userRepository.save(user);
     }
 
-    @PutMapping("/{id}")
-    public User updateUser(@PathVariable("id") long id, @RequestBody User u) {
+    @PutMapping
+    public User updateUser( @RequestBody User u) {
         return userRepository.save(u);
     }
     
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable long id) {
+    public String deleteUser(@PathVariable long id) {
     	userRepository.deleteById(id);
+    	return "User is deleted successfully";
     }
     // END CRUD ------------------------------------------
-    
-    // AUTHENTICATION ------------------------------------
-    
-    @GetMapping
-    @RequestMapping("/validateLogin")
-    public User validateLogin() {
-    	System.out.println("aaaaaaaaaaaaaaaaaaaaa");
-    	return new User("OK user authenticated");
-    }
-    
-    // END AUTHENTICATION ------------------------------------ 
+
     
 }

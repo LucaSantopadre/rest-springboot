@@ -7,22 +7,22 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "users")
+@Table(name = "users_nuovo")
 public class User {
 
 	@Id
 	private Long id;
 	
-	@Column(name = "name", nullable = false)
+	@Column(name = "name")
 	private String name;
 	
-	@Column(name = "email", nullable = false)
+	@Column(name = "email")
 	private String email;
 	
-	@Column(name = "password", nullable = false)
+	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "status", nullable = true)
+	@Column(name = "status")
 	private String status;
 	
 	

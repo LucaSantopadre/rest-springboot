@@ -14,6 +14,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	// per usare questa config.
+	// effettuare richieste con : BasicAuth  user:luca   password:123
 
 	
 	@Override
@@ -26,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		System.out.println("GLOBAL AUTH\n\n\n");
+		System.out.println("GLOBAL AUTH");
 		auth.inMemoryAuthentication().withUser("luca").password("{noop}123").roles("USER");
 	}
 	
